@@ -1,5 +1,7 @@
 #include "test.hh"
 
+using namespace yautf;
+
 template <typename T>
 Test<T>::Test(std::string name, T expected)
 {
