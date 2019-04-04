@@ -28,12 +28,3 @@ TestResult<T> Test<T>::Assert()
     }
     return TestResult<T>(this->Expected, this->Actual, this->Result);
 }
-
-template <typename T>
-Test<T>::~Test()
-{
-    delete &(this->Name);
-    delete &(this->Expected);
-    delete &(this->Actual);
-    delete &(this->Result);
-}

@@ -8,7 +8,6 @@ namespace yautf {
     {
         public:
             Test(std::string name, T expected);
-            ~Test();
             void SetActual(T actual);
             TestResult<T> Assert();
         private:
