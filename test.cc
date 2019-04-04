@@ -24,5 +24,5 @@ TestResult<T> Test<T>::Assert()
     {
         this->Result = false;
     }
-    return new TestResult<T>(this->Expected, this->Actual, this->Result);
+    return TestResult<T>(this->Expected, this->Actual, this->Result);
 }
