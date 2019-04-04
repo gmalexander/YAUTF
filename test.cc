@@ -28,7 +28,7 @@ void Test<T>::Assert()
     {
         result = false;
     }
-    this->Result = new TestResult<T> resultData(this->Expected, this->Actual, result);
+    this->Result = new TestResult<T>(this->Expected, this->Actual, result);
 }
 
 template <typename T>
