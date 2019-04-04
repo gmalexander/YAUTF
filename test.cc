@@ -1,12 +1,14 @@
 #include "test.hh"
 
-Test<typename T>::Test(std::string name, T expected)
+template <typename T>
+Test<T>::Test(std::string name, T expected)
 {
     this->Name = name;
     this->Expected = expected;
 }
 
-void Test<typename T>::SetActual(T actual)
+template <typename T>
+void Test<T>::SetActual(T actual)
 {
     this->Actual = actual;
 }
