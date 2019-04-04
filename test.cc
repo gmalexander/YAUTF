@@ -7,6 +7,7 @@ Test<T>::Test(std::string name, T expected)
 {
     this->Name = name;
     this->Expected = expected;
+    this->Result = NULL;
 }
 
 template <typename T>
@@ -16,15 +17,25 @@ void Test<T>::SetActual(T actual)
 }
 
 template <typename T>
-TestResult<T> Test<T>::Assert()
+void Test<T>::Assert()
 {
+    bool result;
     if (this->Expected == this->Actual)
     {
-        this->Result = true;
+        result = true;
     }
     else
     {
-        this->Result = false;
+        result = false;
     }
-    return TestResult<T>(this->Expected, this->Actual, this->Result);
+    this->Result = new TestResult<T> resultData(this->Expected, this->Actual, result);
+}
+
+template <typename T>
+void Test<T>::DisplayResult()
+{
+    if(this->Result != NULL)
+    {
+        this->Result.DisplayResult();
+    }
 }

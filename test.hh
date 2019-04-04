@@ -9,11 +9,12 @@ namespace yautf {
         public:
             Test(std::string name, T expected);
             void SetActual(T actual);
-            TestResult<T> Assert();
+            void Assert();
+            void DisplayResult();
         private:
             std::string Name;
             T Expected;
             T Actual;
-            bool Result;
+            TestResult<T> Result;
     };
 }
