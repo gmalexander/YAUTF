@@ -10,7 +10,7 @@ TestResult<T>::TestResult(T expected, T actual, bool result)
 }
 
 template <typename T>
-void TestResult<T>::Render()
+void TestResult<T>::DisplayResult()
 {
     std::cout << "RESULT: " << this->Result << "\n";
     std::cout << "Expected: " << this->Expected << " Actual: " << this->Actual;

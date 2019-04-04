@@ -13,7 +13,8 @@ void Test<T>::SetActual(T actual)
     this->Actual = actual;
 }
 
-TestResult Assert()
+template <typename T>
+TestResult<T> Assert()
 {
     if (this->Expected == this->Actual)
     {
