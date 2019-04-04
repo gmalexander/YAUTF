@@ -39,3 +39,9 @@ void Test<T>::DisplayResult()
         this->Result.DisplayResult();
     }
 }
+
+template <typename T>
+Test<T>::~Test()
+{
+    delete &(this->Result);
+}
