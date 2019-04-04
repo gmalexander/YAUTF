@@ -7,7 +7,7 @@ class Test
     public:
         Test(std::string name);
         void SetActual(T actual);
-        TestResult Assert();
+        TestResult<T> Assert();
     private:
         std::string Name;
         T Expected;
