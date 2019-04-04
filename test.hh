@@ -5,7 +5,7 @@ template <typename T>
 class Test
 {
     public:
-        Test(std::string name);
+        Test(std::string name, T expected);
         void SetActual(T actual);
         TestResult<T> Assert();
     private:
