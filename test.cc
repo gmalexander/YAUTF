@@ -14,7 +14,7 @@ void Test<T>::SetActual(T actual)
 }
 
 template <typename T>
-TestResult<T> Assert()
+TestResult<T> Test<T>::Assert()
 {
     if (this->Expected == this->Actual)
     {
