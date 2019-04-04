@@ -24,5 +24,5 @@ TestResult<T> Assert()
     {
         this->Result = false;
     }
-    return new TestResult(this->Expected, this->Actual, this->Result);
+    return new TestResult<T>(this->Expected, this->Actual, this->Result);
 }
