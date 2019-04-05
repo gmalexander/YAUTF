@@ -1,4 +1,5 @@
-namespace yautf {
+namespace yautf
+{
     template <typename T>
     class TestResult
     {

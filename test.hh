@@ -1,8 +1,8 @@
 #include <string>
 #include "testresult.cc"
 
-namespace yautf {
-
+namespace yautf
+{
     template <typename T>
     class Test
     {
