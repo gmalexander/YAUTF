@@ -18,7 +18,7 @@ Yautf<T>::~Yautf()
 }
 
 template <typename T>
-void Yautf<T>::LoadTest(Test* tst)
+void Yautf<T>::LoadTest(Test<T>* tst)
 {
     this->Tests->push_back(*tst);
 }
