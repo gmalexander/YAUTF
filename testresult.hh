@@ -4,6 +4,7 @@ namespace yautf {
     {
         public:
             TestResult(T expected, T actual, bool result);
+            TestResult();
             void DisplayResult();
         private:
             T Expected;

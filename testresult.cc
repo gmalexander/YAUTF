@@ -4,6 +4,9 @@
 using namespace yautf;
 
 template <typename T>
+TestResult<T>::TestResult() {}
+
+template <typename T>
 TestResult<T>::TestResult(T expected, T actual, bool result)
 {
     this->Expected = expected;
