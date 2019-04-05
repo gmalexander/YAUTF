@@ -16,6 +16,15 @@ TestResult<T>::TestResult(T expected, T actual, bool result)
 template <typename T>
 void TestResult<T>::DisplayResult()
 {
-    std::cout << "RESULT: " << this->Result << "\n";
+    std::string resultReadable;
+    if (this->Result)
+    {
+       resultReadable = "SUCCESS";
+    }
+    else
+    {
+        resultReadable = "FAILURE";
+    }
+    std::cout << "RESULT: " << resultReadable << "\n";
     std::cout << "Expected: " << this->Expected << " Actual: " << this->Actual << "\n";
 }

@@ -38,6 +38,8 @@ void Yautf<T>::DisplayAllResults()
     std::cout << "TEST RESULTS:" << "\n";
     for(auto it = this->Tests->begin(); it != this->Tests->end(); it++)
     {
+        std::cout << "\n";
         it->DisplayResult();
+        std::cout << "\n\n";
     }
 }
