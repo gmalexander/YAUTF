@@ -1,4 +1,3 @@
-#include <iostream>
 #include "testresult.hh"
 
 using namespace yautf;

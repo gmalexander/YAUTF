@@ -1,4 +1,3 @@
-#include <string>
 #include "testresult.cc"
 
 namespace yautf
