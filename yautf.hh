@@ -12,5 +12,5 @@ namespace yautf {
             void DisplayAllResults();
         private:
             std::vector<Test<T>>* Tests;
-    }
+    };
 }
