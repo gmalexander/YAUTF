@@ -18,5 +18,5 @@ template <typename T>
 void TestResult<T>::DisplayResult()
 {
     std::cout << "RESULT: " << this->Result << "\n";
-    std::cout << "Expected: " << this->Expected << " Actual: " << this->Actual;
+    std::cout << "Expected: " << this->Expected << " Actual: " << this->Actual << "\n";
 }
