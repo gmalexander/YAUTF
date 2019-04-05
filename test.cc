@@ -7,7 +7,7 @@ Test<T>::Test(std::string name, T expected)
 {
     this->Name = name;
     this->Expected = expected;
-    this->Result = NULL;
+    this->Result = nullptr;
 }
 
 template <typename T>
@@ -34,7 +34,7 @@ void Test<T>::Assert()
 template <typename T>
 void Test<T>::DisplayResult()
 {
-    if(this->Result != NULL)
+    if(this->Result != nullptr)
     {
         this->Result.DisplayResult();
     }
@@ -43,5 +43,5 @@ void Test<T>::DisplayResult()
 template <typename T>
 Test<T>::~Test()
 {
-    delete &(this->Result);
+    delete this->Result;
 }

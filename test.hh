@@ -16,6 +16,6 @@ namespace yautf {
             std::string Name;
             T Expected;
             T Actual;
-            TestResult<T> Result;
+            TestResult<T>* Result;
     };
 }
