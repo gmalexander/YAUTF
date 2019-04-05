@@ -1,4 +1,3 @@
-#include <vector>
 #include "test.cc"
 
 namespace yautf {
