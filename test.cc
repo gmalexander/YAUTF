@@ -37,7 +37,7 @@ void Test<T>::DisplayResult()
     if(this->Result != nullptr)
     {
         std::cout << "For test: " << this->Name << "\n";
-        this->Result.DisplayResult();
+        this->Result->DisplayResult();
     }
 }
 
