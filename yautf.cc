@@ -5,7 +5,7 @@ using namespace yautf;
 template <typename T>
 Yautf<T>::Yautf()
 {
-    this->Tests = new std::vector<T>();
+    this->Tests = new std::vector<Test<T>>();
 }
 
 template <typename T>
