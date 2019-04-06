@@ -18,13 +18,10 @@
 *    along with this program.  If not, see <https://www.gnu.org/licenses/>.                       *
 ***************************************************************************************************/
 
-namespace yautf
-{
-    template class TestManager<int>;
-    template class TestManager<char>;
-    template class TestManager<std::string>;
-    template class TestManager<long>;
-    template class TestManager<bool>;
-    template class TestManager<double>;
-    template class TestManager<float>;
-}
+template class yautf::TestManager<int>;
+template class yautf::TestManager<char>;
+template class yautf::TestManager<std::string>;
+template class yautf::TestManager<long>;
+template class yautf::TestManager<bool>;
+template class yautf::TestManager<double>;
+template class yautf::TestManager<float>;

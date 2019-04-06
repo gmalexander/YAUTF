@@ -18,47 +18,44 @@
 *    along with this program.  If not, see <https://www.gnu.org/licenses/>.                       *
 ***************************************************************************************************/
 
-namespace yautf {
-    
-    template <typename T>
-    TestManager<T>::TestManager()
-    {
-        this->Tests = new std::vector<Test<T>>();
-    }
+template <typename T>
+yautf::TestManager<T>::TestManager()
+{
+    this->Tests = new std::vector<Test<T>>();
+}
 
-    template <typename T>
-    TestManager<T>::~TestManager()
-    {
-        auto start = this->Tests->begin();
-        auto end = this->Tests->end();
-        this->Tests->erase(start, end);
-        delete this->Tests;
-    }
+template <typename T>
+yautf::TestManager<T>::~TestManager()
+{
+    auto start = this->Tests->begin();
+    auto end = this->Tests->end();
+    this->Tests->erase(start, end);
+    delete this->Tests;
+}
 
-    template <typename T>
-    void TestManager<T>::LoadTest(Test<T>* tst)
-    {
-        this->Tests->push_back(*tst);
-    }
+template <typename T>
+void yautf::TestManager<T>::LoadTest(Test<T>* tst)
+{
+    this->Tests->push_back(*tst);
+}
 
-    template <typename T>
-    void TestManager<T>::VerifyTests()
+template <typename T>
+void yautf::TestManager<T>::VerifyTests()
+{
+    for(auto it = this->Tests->begin(); it != this->Tests->end(); it++)
     {
-        for(auto it = this->Tests->begin(); it != this->Tests->end(); it++)
-        {
-            it->Assert();
-        }
+        it->Assert();
     }
+}
 
-    template <typename T>
-    void TestManager<T>::DisplayAllResults()
+template <typename T>
+void yautf::TestManager<T>::DisplayAllResults()
+{
+    std::cout << "TEST RESULTS:" << "\n";
+    for(auto it = this->Tests->begin(); it != this->Tests->end(); it++)
     {
-        std::cout << "TEST RESULTS:" << "\n";
-        for(auto it = this->Tests->begin(); it != this->Tests->end(); it++)
-        {
-            std::cout << "\n";
-            it->DisplayResult();
-            std::cout << "\n\n";
-        }
+        std::cout << "\n";
+        it->DisplayResult();
+        std::cout << "\n\n";
     }
 }
