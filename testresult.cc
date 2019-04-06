@@ -18,31 +18,31 @@
 *    along with this program.  If not, see <https://www.gnu.org/licenses/>.                       *
 ***************************************************************************************************/
 
-using namespace yautf;
+namespace yautf {
+    template <typename T>
+    TestResult<T>::TestResult() {}
 
-template <typename T>
-TestResult<T>::TestResult() {}
-
-template <typename T>
-TestResult<T>::TestResult(T expected, T actual, bool result)
-{
-    this->Expected = expected;
-    this->Actual = actual;
-    this->Result = result;
-}
-
-template <typename T>
-void TestResult<T>::DisplayResult()
-{
-    std::string resultReadable;
-    if (this->Result)
+    template <typename T>
+    TestResult<T>::TestResult(T expected, T actual, bool result)
     {
-       resultReadable = "SUCCESS";
+        this->Expected = expected;
+        this->Actual = actual;
+        this->Result = result;
     }
-    else
+
+    template <typename T>
+    void TestResult<T>::DisplayResult()
     {
-        resultReadable = "FAILURE";
+        std::string resultReadable;
+        if (this->Result)
+        {
+            resultReadable = "SUCCESS";
+        }
+        else
+        {
+            resultReadable = "FAILURE";
+        }
+        std::cout << "RESULT: " << resultReadable << "\n";
+        std::cout << "Expected: " << this->Expected << " Actual: " << this->Actual << "\n";
     }
-    std::cout << "RESULT: " << resultReadable << "\n";
-    std::cout << "Expected: " << this->Expected << " Actual: " << this->Actual << "\n";
 }

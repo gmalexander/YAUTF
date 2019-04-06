@@ -18,49 +18,51 @@
 *    along with this program.  If not, see <https://www.gnu.org/licenses/>.                       *
 ***************************************************************************************************/
 
-using namespace yautf;
+namespace yautf {
 
-template <typename T>
-Test<T>::Test(std::string name, T expected)
-{
-    this->Name = name;
-    this->Expected = expected;
-    this->Result = nullptr;
-}
-
-template <typename T>
-void Test<T>::SetActual(T actual)
-{
-    this->Actual = actual;
-}
-
-template <typename T>
-void Test<T>::Assert()
-{
-    bool result;
-    if (this->Expected == this->Actual)
+    template <typename T>
+    Test<T>::Test(std::string name, T expected)
     {
-        result = true;
+        this->Name = name;
+        this->Expected = expected;
+        this->Result = nullptr;
     }
-    else
-    {
-        result = false;
-    }
-    this->Result = new TestResult<T>(this->Expected, this->Actual, result);
-}
 
-template <typename T>
-void Test<T>::DisplayResult()
-{
-    if(this->Result != nullptr)
+    template <typename T>
+    void Test<T>::SetActual(T actual)
     {
-        std::cout << "For test: " << this->Name << "\n";
-        this->Result->DisplayResult();
+        this->Actual = actual;
     }
-}
 
-template <typename T>
-Test<T>::~Test()
-{
-    delete this->Result;
+    template <typename T>
+    void Test<T>::Assert()
+    {
+        bool result;
+        if (this->Expected == this->Actual)
+        {
+            result = true;
+        }
+        else
+        {
+            result = false;
+        }
+        this->Result = new TestResult<T>(this->Expected, this->Actual, result);
+    }
+
+    template <typename T>
+    void Test<T>::DisplayResult()
+    {
+        if(this->Result != nullptr)
+        {
+            std::cout << "For test: " << this->Name << "\n";
+            this->Result->DisplayResult();
+        }
+    }
+
+    template <typename T>
+    Test<T>::~Test()
+    {
+        delete this->Result;
+    }
+
 }
