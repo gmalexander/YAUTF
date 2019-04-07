@@ -1,6 +1,9 @@
-all:	libyautf.o	libyautf.so
+all:	init	libyautf.o	libyautf.so
 
-test:	libyautf.o	libyautf.so	yautf_test
+test:	init	libyautf.o	libyautf.so	yautf_test
+
+init:
+	if [ ! -d bin ]; then mkdir bin; fi
 
 libyautf.o:
 	g++ -Wall -c src/yautf.cc -fPIC -o bin/libyautf.o
