@@ -1,12 +1,17 @@
-all: libyautf.o	libyautf.so
+all:	libyautf.o	libyautf.so
 
-libyautf.o: yautf.cc yautf.hh testresult.hh testresult.cc testmanager.hh testmanager.cc test.cc test.hh
-	g++ -c yautf.cc -fPIC -o libyautf.o
+test:	libyautf.o	libyautf.so	yautf_test
+
+libyautf.o:
+	g++ -Wall -c src/yautf.cc -fPIC -o bin/libyautf.o
 
 libyautf.so:
-	g++ -shared libyautf.o -o libyautf.so
-	rm libyautf.o
+	g++ -Wall -shared bin/libyautf.o -o bin/libyautf.so
+
+yautf_test:
+	g++ -Wall src/yautf_test.cc -o bin/yautf_test -L/home/srv/dev/YAUTF/bin -lyautf
 
 clean:
-	rm *.o
-	rm *.so
+	rm -f bin/*.o
+	rm -f bin/*.so
+	rm -f bin/yautf_test
