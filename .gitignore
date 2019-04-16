@@ -1,1 +1,9 @@
-cmake-debug-debug/*
+cmake-build-debug/*
+*.so
+*.so*
+*.o
+*.o*
+makefile
+.idea/*
+*.a
+*.a*
