@@ -2,7 +2,11 @@
 
 YAUTF, Yet Another Unit Testing Framework, is a small, lightweight unit testing framework for C++. It aims to deliver a lightweight solution to the problem of standardizable and maintainable unit testing output.
 
-Please note that as a GPL v3 library, `yautf` will require you to license your project as GPL v3 or a compatible license, if you plan on distributing it with your application.
+Please note that as a LGPL v3 library, `yautf` will require you to supply the source to YAUTF or any modifications on request by your users.
+
+### Contributions
+
+Contributions to this project do not require copyright assignment, but by committing and merging into the master branch, you agree to license your commits under the LGPL v3 or later.
 
 ## Loading
 
